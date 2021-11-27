@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * @author duke_zh
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TextView textview;
