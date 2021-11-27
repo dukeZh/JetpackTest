@@ -1,22 +1,33 @@
 package com.startcat.lifecycle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.View;
 import android.widget.Chronometer;
 
-/**
- * Lifecycle 解藕
- */
+import androidx.appcompat.app.AppCompatActivity;
+
+
 public class Step1Activity extends AppCompatActivity {
-    private MyChronometer chronometer;
+    private long elapsedTime;
+    private Chronometer chronometer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_one);
         chronometer = findViewById(R.id.chronometer);
-        getLifecycle().addObserver(chronometer);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        chronometer.setBase(SystemClock.elapsedRealtime() - elapsedTime);
+        chronometer.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        elapsedTime = SystemClock.elapsedRealtime() - chronometer.getBase();
+        chronometer.stop();
     }
 }

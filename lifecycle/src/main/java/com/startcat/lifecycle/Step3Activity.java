@@ -14,7 +14,7 @@ public class Step3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_two);
+        setContentView(R.layout.activity_main_three);
     }
 
     public void stopService(View view) {
