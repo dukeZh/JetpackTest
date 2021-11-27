@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 /**
  * ViewModel+LiveData+Fragment 实现fragment 通讯
+ * @author duke_zh
  */
 public class MainActivity extends AppCompatActivity {
 
